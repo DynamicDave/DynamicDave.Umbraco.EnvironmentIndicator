@@ -6,7 +6,7 @@ Shows a coloured environment banner (LOCAL, ACCEPTANCE/STAGING, PRODUCTION) and 
 
     dotnet add package DynamicDave.Umbraco.EnvironmentIndicator
 
-Supported Umbraco version: **17.x** (net10.0). The backoffice UI is available in English and Dutch.
+Supported Umbraco version: **17.x** (net10.0). The backoffice UI is available in English, Dutch, German, French and Danish.
 
 ## Configuration
 
