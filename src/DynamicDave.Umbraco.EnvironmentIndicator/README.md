@@ -6,7 +6,7 @@ Shows a thin coloured environment bar at the top and a header badge (LOCAL, ACCE
 
     dotnet add package DynamicDave.Umbraco.EnvironmentIndicator
 
-Supported Umbraco version: **17.x** (net10.0). The backoffice UI is available in English, Dutch, German, French and Danish.
+Supported Umbraco version: **17.3 or later 17.x** (net10.0). Umbraco 18 is not supported by this version. The backoffice UI is available in English, Dutch, German, French and Danish.
 
 ## Configuration
 

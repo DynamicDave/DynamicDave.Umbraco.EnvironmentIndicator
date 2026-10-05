@@ -9,7 +9,7 @@ public class EnvironmentResolverTests
     private static readonly EnvironmentIndicatorOptions Defaults = new();
 
     [Theory]
-    [InlineData("Development", "LOCAL")]
+    [InlineData("Development", "DEVELOPMENT")]
     [InlineData("Local", "LOCAL")]
     [InlineData("Staging", "ACCEPTANCE/STAGING")]
     [InlineData("Acceptance", "ACCEPTANCE/STAGING")]
