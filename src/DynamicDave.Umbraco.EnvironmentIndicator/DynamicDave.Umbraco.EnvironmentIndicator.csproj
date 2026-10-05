@@ -13,6 +13,9 @@
     <Product>DynamicDave.Umbraco.EnvironmentIndicator</Product>
     <Title>DynamicDave.Umbraco.EnvironmentIndicator</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/DynamicDave/DynamicDave.Umbraco.EnvironmentIndicator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DynamicDave/DynamicDave.Umbraco.EnvironmentIndicator</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
 

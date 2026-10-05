@@ -1,0 +1,9 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/DynamicDave/DynamicDave.Umbraco.EnvironmentIndicator/main/docs/screenshots/environment-indicator-banner.png",
+      "Caption": "Colored environment badge in the Umbraco backoffice header, showing the current environment and host"
+    }
+  ]
+}
