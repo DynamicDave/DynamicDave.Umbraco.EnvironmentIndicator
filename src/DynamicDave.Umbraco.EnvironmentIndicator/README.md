@@ -1,6 +1,6 @@
 # DynamicDave.Umbraco.EnvironmentIndicator
 
-Shows a coloured environment banner (LOCAL, ACCEPTANCE/STAGING, PRODUCTION) and a header badge in the Umbraco backoffice, so editors always know which environment they are working in.
+Shows a thin coloured environment bar at the top and a header badge (LOCAL, ACCEPTANCE/STAGING, PRODUCTION, plus the host name) in the Umbraco backoffice, so editors always know which environment they are working in.
 
 ## Install
 
@@ -10,7 +10,7 @@ Supported Umbraco version: **17.x** (net10.0). The backoffice UI is available in
 
 ## Configuration
 
-The environment is taken from `ASPNETCORE_ENVIRONMENT`. Built-in defaults: `Development`/`Local` (green, LOCAL), `Staging`/`Acceptance` (amber, ACCEPTANCE/STAGING), `Production` (red, PRODUCTION). Any other name gets its upper-cased name in neutral grey. Override or extend them in `appsettings.json`:
+The environment is taken from `ASPNETCORE_ENVIRONMENT`. Built-in defaults: `Development` (green, DEVELOPMENT), `Local` (green, LOCAL), `Staging`/`Acceptance` (amber, ACCEPTANCE/STAGING), `Production` (red, PRODUCTION). Any other name gets its upper-cased name in neutral grey. Override or extend them in `appsettings.json`:
 
 ```json
 {
@@ -26,7 +26,7 @@ The environment is taken from `ASPNETCORE_ENVIRONMENT`. Built-in defaults: `Deve
 }
 ```
 
-- `ShowHost` (default `true`): show the host name in the banner.
+- `ShowHost` (default `true`): show the host name in the header badge.
 - `Environments`: per environment name (case-insensitive) a `Label` and a `Color`.
 
 Note: a configured entry replaces the built-in default entirely. If you set only `Label`, `Color` falls back to the neutral grey `#607d8b`, so always set both.

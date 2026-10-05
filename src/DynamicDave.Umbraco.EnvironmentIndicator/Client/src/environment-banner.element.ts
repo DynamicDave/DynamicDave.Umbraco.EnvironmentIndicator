@@ -1,8 +1,8 @@
-import { css, html, customElement, state, nothing } from '@umbraco-cms/backoffice/external/lit';
+import { css, html, customElement, state, nothing, unsafeCSS } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { loadEnvironmentInfo, safeColor, type EnvironmentInfo } from './environment-info.js';
 
-const BAR_HEIGHT = '20px';
+const BAR_HEIGHT = '3px';
 
 @customElement('dd-environment-banner')
 export class DdEnvironmentBannerElement extends UmbLitElement {
@@ -26,14 +26,11 @@ export class DdEnvironmentBannerElement extends UmbLitElement {
 
   override render() {
     if (!this._info) return nothing;
-    const text = this._info.host ? `${this._info.label} · ${this._info.host}` : this._info.label;
-    return html`<div class="bar" style="background:${safeColor(this._info.color)}">${text}</div>`;
+    return html`<div class="bar" style="background:${safeColor(this._info.color)}"></div>`;
   }
 
   static override styles = css`
-    .bar { position: fixed; top: 0; left: 0; right: 0; height: 20px; z-index: 10000;
-      display: flex; align-items: center; justify-content: center; color: #fff;
-      font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+    .bar { position: fixed; top: 0; left: 0; right: 0; height: ${unsafeCSS(BAR_HEIGHT)}; z-index: 10000; }
   `;
 }
 
