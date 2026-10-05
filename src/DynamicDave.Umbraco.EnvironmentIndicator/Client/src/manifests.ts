@@ -22,4 +22,28 @@ export const manifests: Array<UmbExtensionManifest> = [
     meta: { culture: 'nl' },
     js: () => import('./localization/nl.js'),
   },
+  {
+    type: 'localization',
+    alias: 'DynamicDave.EnvironmentIndicator.Localization.De',
+    name: 'Environment Indicator German',
+    weight: -100,
+    meta: { culture: 'de' },
+    js: () => import('./localization/de.js'),
+  },
+  {
+    type: 'localization',
+    alias: 'DynamicDave.EnvironmentIndicator.Localization.Fr',
+    name: 'Environment Indicator French',
+    weight: -100,
+    meta: { culture: 'fr' },
+    js: () => import('./localization/fr.js'),
+  },
+  {
+    type: 'localization',
+    alias: 'DynamicDave.EnvironmentIndicator.Localization.Da',
+    name: 'Environment Indicator Danish',
+    weight: -100,
+    meta: { culture: 'da' },
+    js: () => import('./localization/da.js'),
+  },
 ];
