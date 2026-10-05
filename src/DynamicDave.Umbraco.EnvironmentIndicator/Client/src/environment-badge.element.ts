@@ -18,12 +18,13 @@ export class DdEnvironmentBadgeElement extends UmbLitElement {
       this._info.host ? `${this.localize.term('ddEnvironmentIndicator_host')}: ${this._info.host}` : '',
       `${this.localize.term('ddEnvironmentIndicator_version')}: ${this._info.umbracoVersion}`,
     ].filter(Boolean).join('\n');
-    return html`<span class="badge" style="background:${safeColor(this._info.color)}" title=${title}>${this._info.label}</span>`;
+    const text = this._info.host ? `${this._info.label} · ${this._info.host}` : this._info.label;
+    return html`<span class="badge" style="background:${safeColor(this._info.color)}" title=${title}>${text}</span>`;
   }
 
   static override styles = css`
     :host { display: flex; align-items: center; height: 100%; padding: 0 var(--uui-size-space-3); }
-    .badge { color: #fff; font-weight: 700; font-size: 11px; letter-spacing: .05em; padding: 3px 8px; border-radius: 3px; }
+    .badge { color: #fff; font-weight: 700; font-size: 11px; letter-spacing: .05em; padding: 3px 8px; border-radius: 3px; white-space: nowrap; }
   `;
 }
 

@@ -9,7 +9,7 @@ internal static class EnvironmentResolver
 
     private static readonly Dictionary<string, EnvironmentStyle> Defaults = new(StringComparer.OrdinalIgnoreCase)
     {
-        ["Development"] = new() { Label = "LOCAL", Color = "#2e9e4f" },
+        ["Development"] = new() { Label = "DEVELOPMENT", Color = "#2e9e4f" },
         ["Local"] = new() { Label = "LOCAL", Color = "#2e9e4f" },
         ["Staging"] = new() { Label = "ACCEPTANCE/STAGING", Color = "#e0a800" },
         ["Acceptance"] = new() { Label = "ACCEPTANCE/STAGING", Color = "#e0a800" },
