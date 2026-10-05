@@ -1,0 +1,14 @@
+{
+  "id": "DynamicDave.Umbraco.EnvironmentIndicator",
+  "name": "DynamicDave.Umbraco.EnvironmentIndicator",
+  "version": "0.0.0",
+  "allowTelemetry": true,
+  "extensions": [
+    {
+      "name": "Dynamic Dave Umbraco Environment Indicator Bundle",
+      "alias": "DynamicDave.Umbraco.EnvironmentIndicator.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/DynamicDaveUmbracoEnvironmentIndicator/dynamic-dave-umbraco-environment-indicator.js"
+    }
+  ]
+}
