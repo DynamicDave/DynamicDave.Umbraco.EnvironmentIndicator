@@ -9,8 +9,13 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Api.Management.OpenApi;
 using Umbraco.Cms.Api.Common.OpenApi;
+using EnvironmentIndicatorConstants = DynamicDave.Umbraco.EnvironmentIndicator.Constants;
 
-namespace DynamicDave.Umbraco.EnvironmentIndicator.Composers
+// Development only: publishes the package API as its own Swagger document, so the TypeScript client in
+// src/DynamicDave.Umbraco.EnvironmentIndicator/Client can be regenerated (npm run generate-client).
+// It lives in the TestSite rather than the package because Umbraco 18 replaced Swashbuckle with
+// Microsoft.AspNetCore.OpenApi; TestSite.csproj only compiles it when the TestSite runs on Umbraco 17.
+namespace TestSite.OpenApi
 {
     public class DynamicDaveUmbracoEnvironmentIndicatorApiComposer : IComposer
     {
@@ -30,7 +35,7 @@ namespace DynamicDave.Umbraco.EnvironmentIndicator.Composers
                 // Configure the Swagger generation options
                 // Add in a new Swagger API document solely for our own package that can be browsed via Swagger UI
                 // Along with having a generated swagger JSON file that we can use to auto generate a TypeScript client
-                opt.SwaggerDoc(Constants.ApiName, new OpenApiInfo
+                opt.SwaggerDoc(EnvironmentIndicatorConstants.ApiName, new OpenApiInfo
                 {
                     Title = "Dynamic Dave Umbraco Environment Indicator Backoffice API",
                     Version = "1.0",
@@ -50,7 +55,7 @@ namespace DynamicDave.Umbraco.EnvironmentIndicator.Composers
 
         public class DynamicDaveUmbracoEnvironmentIndicatorOperationSecurityFilter : BackOfficeSecurityRequirementsOperationFilterBase
         {
-            protected override string ApiName => Constants.ApiName;
+            protected override string ApiName => EnvironmentIndicatorConstants.ApiName;
         }
 
         // This is used to generate nice operation IDs in our swagger json file

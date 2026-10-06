@@ -19,7 +19,11 @@ export const onInit: UmbEntryPointOnInit = async (host, _extensionRegistry) => {
     console.warn("UMB_AUTH_CONTEXT not available — extension API client will not be authenticated");
     return;
   }
-  authContext.configureClient(client);
+  // configureClient() does not exist before Umbraco 17.3. There the client keeps the config it copied
+  // from umbHttpClient at creation (see hey-api.ts), which already carries the backoffice auth.
+  if (typeof authContext.configureClient === "function") {
+    authContext.configureClient(client);
+  }
 
   if (!document.querySelector("dd-environment-banner")) {
     document.body.prepend(document.createElement("dd-environment-banner"));
