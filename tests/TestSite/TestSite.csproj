@@ -48,6 +48,11 @@
     <ProjectReference Include="..\..\src\DynamicDave.Umbraco.EnvironmentIndicator\DynamicDave.Umbraco.EnvironmentIndicator.csproj" />
   </ItemGroup>
 
+  <ItemGroup Condition="!$(TestSiteUmbracoVersion.StartsWith('17.'))">
+    <!-- The Swagger document for client generation uses Swashbuckle, which Umbraco 18+ no longer ships -->
+    <Compile Remove="OpenApi\**" />
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- Remove RazorCompileOnBuild and RazorCompileOnPublish when not using ModelsMode InMemoryAuto -->
     <RazorCompileOnBuild>false</RazorCompileOnBuild>
