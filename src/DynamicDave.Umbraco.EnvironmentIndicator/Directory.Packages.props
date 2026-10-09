@@ -8,7 +8,7 @@
       Umbraco 17.0.0 and only uses APIs that exist in every supported version. Override to compile against another
       version, e.g. dotnet build -p:UmbracoCmsVersion=18.2.1
     -->
-    <UmbracoCmsVersion Condition="'$(UmbracoCmsVersion)' == ''">[17.0.0, 19.0.0)</UmbracoCmsVersion>
+    <UmbracoCmsVersion Condition="'$(UmbracoCmsVersion)' == ''">[17.7.1, 19.0.0)</UmbracoCmsVersion>
   </PropertyGroup>
 
   <ItemGroup>
